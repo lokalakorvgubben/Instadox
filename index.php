@@ -1,3 +1,11 @@
+<?php
+session_start();
+/*if (!isset($_SESSION["user"])) {
+   header("Location: login.php");
+}*/
+include "database.php";
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,9 +17,17 @@
 </head>
 <body>
     <?php
-    if (isset($_SESSION["user"])) {
+    if(isset($_SESSION["username"])){
         ?>
-        <a href="logout.php" type="button" class="btn btn-outline-info" style="height: 50px; margin: 10px;color:aliceblue;position: absolute;padding: 11;right: 0px;margin-right: 200px;font-weight: 600;width: 75px;">Logout</a>  
+        <h1>Hello <?php echo $_SESSION["username"]?>! Welcome to InstaDox</h1>
+        <?php
+    }
+    
+    echo $_SESSION["username"];
+    
+    if (isset($_SESSION["username"])) {
+        ?>
+        <a href="logout.php" type="button" class="btn btn-outline-info" style="height: 50px; margin: 10px;color:black;position: absolute;padding: 11;right: 0px;margin-right: 200px;font-weight: 600;width: 75px;">Logout</a>  
         <?php
     }
     else{
