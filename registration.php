@@ -80,10 +80,6 @@ if (isset($_SESSION["user"])) {
             <div class="form-group">
                 <input type="password" class="form-control" name="repeat_password" placeholder="Confirm Password">
             </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
-                <label style="color:aliceblue;"class="form-check-label" for="flexSwitchCheckChecked">Do you want free administration over this website?</label>
-            </div>
             <div class="form-btn">
                 <input type="submit" class="btn btn-primary" value="Register Now!" name="submit">
             </div>

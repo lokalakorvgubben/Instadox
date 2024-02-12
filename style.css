@@ -1,0 +1,114 @@
+.container{
+    max-width: 80vw;
+    margin:0 auto;
+    padding:50px;
+    margin-top: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: min-content;
+}
+.logincontainer{
+    background-color: #063436;
+    max-width: 30vw;
+    margin:0 auto;
+    padding:50px;
+    margin-top: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: min-content;
+    min-height: 60vh;
+}
+.loginbackground{
+    background-color: #074548;
+    height: 100%;
+    width: 100%;
+}
+.form-group{
+    margin-bottom:30px;
+}
+.form-btn{
+    padding-top: 20px;
+}
+
+.imageBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+.alb {
+    float: left;
+    width: 200px;
+    height: 310px;
+    margin-right: 100px;
+}
+.alb img {
+    width: 200px;
+    height: 310px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.kaboom {
+    height:510px;
+}
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5em;
+}
+.cardText{
+    flex: 0 0 auto;
+    width: 400px;
+}
+.cardWidth{
+    width: 200px;
+    margin: 10px;
+}
+.header{
+    background-color: #074548;
+    height: 7.5vh;
+}
+.indexbody{
+    background-color: #063436;
+    min-height: 82.5vh;
+    padding-top: 60px;
+}
+.footer{
+    background-color: #074548;
+    height: 10vh;
+}
+.logo{
+    color:aliceblue;
+    margin-left: 200px;
+    padding: 10;
+}
+.headeritems{
+    display: flex;
+}
+.headerlink{
+    color:aliceblue;
+    font-size: 30px;
+    padding: 11;
+    margin-left: 25;
+}
+.login{
+    color:aliceblue;
+    position: absolute;
+    padding: 11;
+    right: 0px;
+    font-size: 30px;
+    margin-right: 150px;
+}
+.newcontainer{
+    max-width: 80vw;
+    margin:0 auto;
+    padding:50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: min-content;
+    background-color: #074548;
+}
+.spacemaker{
+    height:100px;
+}
