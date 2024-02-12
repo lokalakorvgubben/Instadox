@@ -16,7 +16,7 @@
     }
     else{
         ?>
-        <a href="login.php" type="button" class="btn btn-outline-info" style="height: 50px; margin: 10px;color:aliceblue;position: absolute;padding: 11;right: 0px;margin-right: 200px;font-weight: 600;width: 75px;">Login</a>  
+        <a href="login.php" type="button" class="btn btn-outline-info" style="height: 50px; margin: 10px;color:black;position: absolute;padding: 11;right: 0px;margin-right: 200px;font-weight: 600;width: 75px;">Login</a>  
         <?php
     }
     ?>
