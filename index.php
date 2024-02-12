@@ -8,5 +8,6 @@
 <body>
     <h1>kaboom</h1>
     <p>kaboom 2</p>
+    <p>kaboom 3</p>
 </body>
 </html>
