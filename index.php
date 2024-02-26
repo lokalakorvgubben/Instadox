@@ -23,11 +23,10 @@ include "database.php";
         <?php
     }
     
-    echo $_SESSION["username"];
-    
     if (isset($_SESSION["username"])) {
         ?>
-        <a href="logout.php" type="button" class="btn btn-outline-info" style="height: 50px; margin: 10px;color:black;position: absolute;padding: 11;right: 0px;margin-right: 200px;font-weight: 600;width: 75px;">Logout</a>  
+        <a href="logout.php" type="button" class="btn btn-outline-info" style="height: 50px; margin: 10px;color:black;position: absolute;padding: 11;right: 0px;margin-right: 200px;font-weight: 600;width: 75px;">Logout</a>
+        <a href="post.php" type="button" class="btn btn-outline-info" style="height: 50px; margin: 10px;color:black;position: absolute;padding: 11;right: 0px;margin-right: 300px;font-weight: 600;width: 75px;">Post</a>  
         <?php
     }
     else{
