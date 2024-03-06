@@ -54,7 +54,7 @@ if (isset($_SESSION["user"])) {
             </div><br>
         </form>
         <div><p style="color:aliceblue;">Not a member? <a style="color:#0b959c;" href="registration.php">Join now!</a></p></div>
-        <div><p><a  style="color:#0b959c;" href="newindex.php">Continue to website as Guest</a></p></div>
+        <div><p><a  style="color:#0b959c;" href="index.php">Continue to website as Guest</a></p></div>
         </div>
     </div>
    
