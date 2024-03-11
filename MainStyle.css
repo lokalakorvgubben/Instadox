@@ -1,16 +1,20 @@
 :root{
-    --primary-color: #fff;
-    --secondary-color: #232323;
+    --background: '207, 207, 207';
+    --text: '0, 0, 0';
+    --primary: '0, 135, 184';
+    --secondary: '107, 166, 255';
+    --accent: '0, 187, 255';
 }
 
 body{
-    background-color: var(--primary-color) !important;
-    color: var(--secondary-color) !important;
+    background-color: rgba(var(--background),1) !important;
+    color: rgba(var(--text),1) !important;
     transition: all 0.4s;
 }
 
 .switch{
-    margin-left: 50%;
+    margin-top: 20%;
+    margin-left: 35%;
 }
 
 .toggle-checkbox {
@@ -21,7 +25,7 @@ body{
 }
 
 .toggle-switch {
-    background-color: rgb(198, 198, 198);
+    background-color: #b0b0b0;
     width: 78px;
     height: 32px;
     border-radius: 16px;
@@ -48,11 +52,11 @@ body{
 }
 
 .toggle-checkbox:checked+.toggle-switch {
-    background-color: #343434;
+    background-color: #181818;
 }
 
 .toggle-checkbox:checked+.toggle-switch::before {
     content: "";
     left: 50px;
-    color: #383838;
+    color: #181818;
 }
