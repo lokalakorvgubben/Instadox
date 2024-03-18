@@ -56,3 +56,7 @@ body{
     left: 50px;
     color: #383838;
 }
+.cardWidth{
+    width: 200px;
+    margin: 10px;
+}

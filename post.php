@@ -14,13 +14,17 @@ if (!isset($_SESSION["user"])) {
     <link rel="stylesheet" href="style.css">
     <title>Post Something!</title>
 </head>
-<body>
-    <div class="container">
-        <h1>Hey <?php echo $_SESSION["username"]?>! What would you like to post?</h1>
+<body class="loginbackground">
+    <div class="logincontainer">
+        <h1 style="color: white;">Hey <?php echo $_SESSION["username"]?>! What would you like to post?</h1>
+
+        <?php echo $_SESSION["user_id"];
+        echo $_SESSION["user"];
+        ?>
 
         <form action="uploadpost.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <input type="text" class="form-control" name="description" placeholder="Your description">
+                <input type="text" class="form-control" name="description" placeholder="Your Title">
             </div>
 
             <div class="form-group">

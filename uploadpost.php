@@ -8,6 +8,7 @@ if (isset($_POST['submit']) && isset($_FILES['image'])) {
     echo "</pre>";
 
     $description = $_POST["description"];
+    $user_id = $_SESSION["user_id"];
     $img_name = $_FILES['image']['name'];
     $img_size = $_FILES['image']['size'];
     $tmp_name = $_FILES['image']['tmp_name'];
@@ -30,7 +31,7 @@ if (isset($_POST['submit']) && isset($_FILES['image'])) {
                 $img_upload_path = 'uploads/'.$new_img_name;
                 move_uploaded_file($tmp_name, $img_upload_path);
 
-                $sql = "INSERT INTO posts(description, post_image) VALUES('$description', '$new_img_name')";
+                $sql = "INSERT INTO posts(user_id, description, post_image) VALUES('user_id','$description', '$new_img_name')";
                 mysqli_query($conn, $sql);
                 header("Location: index.php");
             }else {
