@@ -19,8 +19,14 @@ include "database.php";
     <script src="UpdateFeed.js"></script>
 </head>
 <body>
+    <label class="switch">
+        <input type="checkbox" class="toggle-checkbox" id="checkbox">
+        <div class="toggle-switch"></div>
+    </label>
 
+    <script src="DarkModeButton.js"></script>
     <?php
+    
 
     if (isset($_SESSION["username"])) {
         ?>
@@ -35,31 +41,36 @@ include "database.php";
         <?php
     }
     ?>
-    <h1>kaboom</h1>
-    <p>kaboom 2</p>
-    <p>kaboom 3</p>
     <?php 
         $sql = "SELECT * FROM posts ORDER BY post_id DESC";
         $res = mysqli_query($conn,  $sql);
-        $resCheck = mysqli_num_rows($res);
+        $resCheck = mysqli_num_rows($res);        
 
         if ($resCheck > 0) {
             while ($row = mysqli_fetch_assoc($res)) {  ?>
 
             <div class="cardWidth">
                 <div class="card">
+
+                    <?php
+                        $usersql = "SELECT * from users WHERE ID = " . $row['user_id'];
+                
+                        $userresult = mysqli_query($conn, $usersql);
+                        $user = mysqli_fetch_array($userresult, MYSQLI_ASSOC);
+                        echo "<h5 class='card-title'>" . $user["full_name"] . "</h5>";
+                    ?>
+
                     <?php echo "<a href='post_details.php?id=".$row['post_id']."'><img src='uploads/".$row['post_image']."' class='card-img-top' style='width: 198px; height: 310px;'></a>"; ?>
                     <?php echo "<div class='card-body'>"; ?>
-                    <?php echo "<h5 class='card-title'>" . $row['description'] . "</h5>";?>
+                    <?php echo "<h4 class='card-title'>" . $row['description'] . "</h4>";?>
+                    
+                    
+                    <?php /*echo "<h5 class='card-title'>" . $row['user_id'] . "</h5>";*/?>
+
+                    <?php echo "</div>"; ?>
                 </div>
             </div>
 
     <?php } }?>
-    <label class="switch">
-        <input type="checkbox" class="toggle-checkbox" id="checkbox">
-        <div class="toggle-switch"></div>
-    </label>
-
-    <script src="DarkModeButton.js"></script>
 </body>
 </html>

@@ -1,4 +1,8 @@
-<?php 
+<?php
+session_start();
+if (!isset($_SESSION["user"])) {
+   header("Location: login.php");
+} 
 
 if (isset($_POST['submit']) && isset($_FILES['image'])) {
     include "database.php";
@@ -17,7 +21,7 @@ if (isset($_POST['submit']) && isset($_FILES['image'])) {
     echo $description;
 
     if ($error === 0) {
-        if ($img_size > 125000) {
+        if ($img_size > 250000) {
             $em = "Sorry, your file is too large.";
             header("Location: index.php?error=$em");
         }else {
@@ -31,7 +35,7 @@ if (isset($_POST['submit']) && isset($_FILES['image'])) {
                 $img_upload_path = 'uploads/'.$new_img_name;
                 move_uploaded_file($tmp_name, $img_upload_path);
 
-                $sql = "INSERT INTO posts(user_id, description, post_image) VALUES('user_id','$description', '$new_img_name')";
+                $sql = "INSERT INTO posts(user_id, description, post_image) VALUES('$user_id','$description', '$new_img_name')";
                 mysqli_query($conn, $sql);
                 header("Location: index.php");
             }else {

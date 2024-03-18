@@ -30,7 +30,7 @@ if (isset($_SESSION["user"])) {
                         session_start();
                         $_SESSION["user"] = "yes";
                         $_SESSION["username"] = $user["full_name"];
-                        $_SESSION["user_id"] = $user["id"];
+                        $_SESSION["user_id"] = $user["ID"];
                         $_SESSION["adminCheck"] = $user["admin"];
                         header("Location: index.php");
                         die();
