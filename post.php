@@ -17,7 +17,6 @@ if (!isset($_SESSION["user"])) {
 <body class="loginbackground">
     <div class="logincontainer">
         <h1 style="color: white;">Hey <?php echo $_SESSION["username"]?>! What would you like to post?</h1>
-
         <?php 
         echo $_SESSION["user_id"];
         echo $_SESSION["user"];
@@ -35,7 +34,7 @@ if (!isset($_SESSION["user"])) {
             <div class="form-btn">
                 <input type="submit" class="btn btn-primary" value="Post!" name="submit">
             </div>
-
+        </form>
     </div>
 </body>
 </html>
