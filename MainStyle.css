@@ -60,3 +60,8 @@ body{
     left: 50px;
     color: #181818;
 }
+.card{
+    background-color: rgba(var(--background),1) !important;
+    color: rgba(var(--text),1) !important;
+    transition: all 0.4s;
+}

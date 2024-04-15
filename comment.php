@@ -17,7 +17,8 @@ if (isset($_POST['submit'])) {
 
         $sql = "INSERT INTO comments(user_id, comment, post_id) VALUES('$user_id','$comment', '$post_id')";
         mysqli_query($conn, $sql);
-        header("Location: index.php");
+        header("Location: post_details.php?id=".$post_id."");
+        //<a href='post_details.php?id=".$row['post_id']."'>
 
     }else {
         $em = "unknown error occurred!";

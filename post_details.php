@@ -46,22 +46,37 @@ include "database.php";
                 echo "<p class='card-text fs-3'>" . $row['description'] . "</p>";
 
                 //comments
+                
                 ?>
 
                 <form action="comment.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="comment" placeholder="Comment as <?php echo $user["full_name"]?>">
+                        <?php
+                            if (isset($_SESSION["user"])) {
+                                ?>
+
+                                <input type="text" class="form-control" name="comment" placeholder="Comment as <?php echo $_SESSION["username"]?>">
+                                <input type="hidden" name="post_id" value="<?php echo $id ?>">
+                                <div class="form-btn">
+                                    <input type="submit" class="btn btn-primary" value="Post Comment" name="submit">
+                                </div>
+
+                                <?php
+                            }
+                            else{   
+                                ?>
+                                <a href="login.php" type="button" class="btn btn-outline-info" style="height: 65px; margin: 10px;padding: 11;right: 0px;margin-right: 200px;font-weight: 600;width: 115px;">Login to comment!</a>  
+                                <?php
+                            }
+                        ?>
                     </div>
-                    <input type="hidden" name="post_id" value="<?php echo $id ?>">
-                    <div class="form-btn">
-                        <input type="submit" class="btn btn-primary" value="Post Comment" name="submit">
-                    </div>
+
                 </form>
                 <?php
 
 
                 //comments
-                $commentsql = "SELECT * FROM comments ORDER BY comment_id DESC";
+                $commentsql = "SELECT * FROM comments WHERE post_id = $id ORDER BY comment_id DESC";
                 $commentres = mysqli_query($conn,  $commentsql);
                 $commentresCheck = mysqli_num_rows($commentres);        
 
@@ -86,17 +101,13 @@ include "database.php";
                             <?php /*echo "<h5 class='card-title'>" . $row['user_id'] . "</h5>";*/?>
 
                             <?php echo "</div>"; ?>
+                            
                         </div>
                     </div>
             <?php
                 }
             }
-                ?>
-
-                    
-                <?php
-
-
+                
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
@@ -104,7 +115,7 @@ include "database.php";
         }
             
         } else {
-            echo "No movie found";
+            echo "No post found";
         }
         $conn->close();
         ?>

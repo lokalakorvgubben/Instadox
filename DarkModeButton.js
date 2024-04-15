@@ -20,18 +20,38 @@ var light = {
      accent: '0, 187, 255'
 };
 checkbox.addEventListener( "change", () => {
+
+     var posts = document.querySelectorAll('.card');
+
    if ( checkbox.checked ) {
-        root.style.setProperty(background, dark.background);
-        root.style.setProperty(text, dark.text);
-        root.style.setProperty(primary, dark.primary);
-        root.style.setProperty(secondary, dark.secondary);
-        root.style.setProperty(accent, dark.accent);
+          root.style.setProperty(background, dark.background);
+          root.style.setProperty(text, dark.text);
+          root.style.setProperty(primary, dark.primary);
+          root.style.setProperty(secondary, dark.secondary);
+          root.style.setProperty(accent, dark.accent);
+
+          // Apply dark theme to all 'card' elements
+          cards.forEach(card => {
+               card.style.setProperty(background, dark.background);
+               card.style.setProperty(text, dark.text);
+               card.style.setProperty(primary, dark.primary);
+               card.style.setProperty(secondary, dark.secondary);
+               card.style.setProperty(accent, dark.accent);
+          });
    } else {
         root.style.setProperty(background, light.background);
         root.style.setProperty(text, light.text);
         root.style.setProperty(primary, light.primary);
         root.style.setProperty(secondary, light.secondary);
         root.style.setProperty(accent, light.accent);
+
+        cards.forEach(card => {
+          card.style.setProperty(background, dark.background);
+          card.style.setProperty(text, dark.text);
+          card.style.setProperty(primary, dark.primary);
+          card.style.setProperty(secondary, dark.secondary);
+          card.style.setProperty(accent, dark.accent);
+     });
    }
 });
 
