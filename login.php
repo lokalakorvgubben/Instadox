@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["user"])) {
-   header("Location: index.php");
+   //header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ if (isset($_SESSION["user"])) {
                         session_start();
                         $_SESSION["user"] = "yes";
                         $_SESSION["username"] = $user["full_name"];
-                        $_SESSION["user_id"] = $user["id"];
+                        $_SESSION["user_id"] = $user["ID"];
                         $_SESSION["adminCheck"] = $user["admin"];
                         header("Location: index.php");
                         die();
@@ -54,7 +54,7 @@ if (isset($_SESSION["user"])) {
             </div><br>
         </form>
         <div><p style="color:aliceblue;">Not a member? <a style="color:#0b959c;" href="registration.php">Join now!</a></p></div>
-        <div><p><a  style="color:#0b959c;" href="newindex.php">Continue to website as Guest</a></p></div>
+        <div><p><a  style="color:#0b959c;" href="index.php">Continue to website as Guest</a></p></div>
         </div>
     </div>
    
